@@ -6,15 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
+      body {
+        background-color: white;
+      }
+
       .imageCarousel {
         height: 50vh;
         width: 50vw;
         margin: 20px auto;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
       }
 
       .imageCarousel > img {
         width: 100%;
-        height: 100%;
         opacity: 1;
         transition: opacity 0.5s;
         object-fit: cover;
@@ -54,11 +60,22 @@
         right: 25%;
         margin-right: 10px;
       }
+
+      #previousImg, #nextImg {
+        display: none;
+      }
+
+      /* #previousImg {
+        display: block;
+      } */
+
     </style>
   </head>
   <body>
     <div class="imageCarousel">
-      <img src="" />
+      <img src="" id="previousImg" />
+      <img src="" id="currentImg" />
+      <img src="" id="nextImg" />
       <button id="prev-button"><</button>
       <button id="next-button">></button>
     </div>
